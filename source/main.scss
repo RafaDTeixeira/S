@@ -1,0 +1,156 @@
+@use "config/reset.scss";
+@use "config/variaveis.scss";
+
+@mixin subtitulo(){
+    font-family: variaveis.$FontPrincipal;
+    font-weight: 400;
+    color: #353b48;
+}
+
+@mixin input(){
+    width: 458px;
+    height: 56px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px; 
+    outline: 0;
+    font-family: variaveis.$FontPrincipal;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+body{
+    overflow: hidden;
+}
+
+.container{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 35px;
+    overflow: hidden;
+
+    img{
+        width: 340px;
+        height: 250px;
+    }
+
+    a{
+        text-decoration: none;
+        color: black;      
+
+        &:hover{
+            color: variaveis.$corSecundaria;
+        }       
+    }
+
+    .paragrafo{
+        display: flex;
+
+        p{
+            margin-right: 15px;
+        }
+    }
+
+    h2{
+        @include subtitulo();
+    }
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    padding-bottom: 10px;
+
+    label{
+        margin-bottom: 10px;
+        font-family: variaveis.$FontPrincipal;
+        font-size: 20px;
+        font-weight: 400;
+        cursor: pointer;
+        color: #353b48;
+    }
+    input{
+       @include input();
+
+        &:focus{
+            border-color: variaveis.$corSecundaria;
+        }
+    }
+}
+
+button{
+    width: 450px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: variaveis.$corPrincipal;
+    border-style: none;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+
+    &:hover{
+        background-color: variaveis.$corSecundaria;
+    }
+}
+
+h2{
+    @include subtitulo();
+   margin-top: 48px;
+   margin-left: 20px;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+
+    .card-foguetes{
+        width: 320px;
+        border: 1px solid variaveis.$corSecundaria;
+        border-radius: 8px;
+        text-align: center;
+        padding-top: 10px;
+        margin-left: 15px;
+        margin-top: 5px;
+        
+        h2{
+            @include subtitulo();
+            margin-top: 50px;
+        }
+
+        h3{
+            @include subtitulo();
+            text-align: start;
+            padding-left: 10px;
+            padding: 10px;
+        }
+        
+        p{
+            text-align: start;
+            padding-left: 10px;
+        }
+
+        img{
+            border-radius: 8px;
+            width: 75%;
+        }
+    
+        button{
+            width: 75%;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        input{
+            @include input();
+            width: 85%;
+        }
+    }
+}
